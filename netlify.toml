@@ -1,6 +1,6 @@
 [build]
-  publish = "build"  # Specify the root directory since your index.html is at the root
-  # command = "npm run build"  # Uncomment if you have a build step
+  publish = "."  # This should be the directory where your index.html is located
+  # command = "npm run build"  # Uncomment if you have a build command
 
 [[redirects]]
   from = "/*"
