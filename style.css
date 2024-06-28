@@ -1,0 +1,403 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* html scroll */
+
+html::-webkit-scrollbar {
+    width: 0.5rem;
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    width: 2rem;
+    background: var(--main-color);
+}
+
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+:root {
+    --main-color: #647bff;
+    --body-color: #090a1a;
+    --container-color: #171b3c;
+    --bg-color: #fff;
+}
+
+body {
+    color: var(--bg-color);
+    background: var(--body-color);
+}
+
+/* Navbar */
+
+.header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar a {
+    font-size: 1.15rem;
+    color: white;
+    font-weight: 500;
+    margin-left: 4rem;
+    text-align: center;
+}
+
+.nav-link {
+    font-size: 0.94rem;
+    padding: 4px 8px;
+    border-radius: 0.2rem;
+    color: var(--bg-color);
+    transition: 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: var(--main-color);
+    background: var(--container-color);
+}
+
+
+
+/* Video Player */
+
+
+#video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 100%;
+    /* Allows the container to grow and shrink */
+    max-width: 65%;
+    height: auto;
+    background: #191c29;
+    position: relative;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+#video-container::before,
+#video-container::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+    animation: spin 2.5s linear infinite;
+    display: none;
+}
+
+#video-container::before {
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    top: -1%;
+    left: -2%;
+}
+
+#video-container::after {
+    top: calc(500px / 6);
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(500px / 6));
+    opacity: 1;
+    transition: opacity .5s;
+}
+
+#video-container.active::before,
+#video-container.active::after {
+    display: block;
+}
+
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+
+    100% {
+        --rotate: 360deg;
+    }
+}
+
+
+.container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 130px;
+
+}
+
+.welcome-header {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0px 40px 0px;
+
+}
+
+.heading {
+    text-transform: uppercase;
+    color: #8e56ff;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.heading-home {
+    text-transform: uppercase;
+    color: #8e56ff;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: underline;
+    padding: 10px 10px 40px 10px;
+}
+
+.sub-heading {
+    color: rgb(255, 255, 255);
+    font-weight: 900;
+    text-align: center;
+    padding: 30px 0px 20px 0px;
+}
+
+.button-container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+
+}
+
+.back-to-top-container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 100px 50px 100px;
+
+}
+
+.btn {
+    font-size: 0.97rem;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    background-color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 0.4rem;
+    transition: 0.4s ease-in-out;
+}
+
+.btn:hover {
+    color: var(--bg-color);
+    background-color: var(--main-color);
+    box-shadow: 0 0 5px #647bff, 0 0 20px #647bff, 0 0 60px #647bff,
+        0 0 150px #647bff;
+}
+
+/* Projects section */
+
+.projects-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 10px 15px 50px 15px;
+}
+
+.project-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    background: var(--container-color);
+    border-radius: 0.4rem;
+}
+
+.project-box:hover {
+    transform: scale(1.05);
+    transition: 0.5s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.project-box h2 {
+    font-size: 1.4rem;
+    color: var(--main-color);
+    font-weight: 500;
+    margin: 0.5rem 0;
+}
+
+.project-box p {
+    font-size: 1.5rem;
+}
+
+.btn-project {
+    font-size: 0.97rem;
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    color: var(--bg-color);
+    background-color: var(--main-color);
+    padding: 15px 20px;
+    border-radius: 0.4rem;
+    transition: 0.4s ease-in-out;
+    margin: 1rem 0;
+}
+
+.btn-project:hover {
+    box-shadow: 0 0 5px #647bff, 0 0 20px #647bff, 0 0 60px #647bff,
+        0 0 150px #647bff;
+}
+
+.project-image {
+    margin-top: 1.5rem;
+    border-radius: 10%;
+    background: #98a7fc;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    height: 150px;
+    width: 250px;
+}
+
+.project-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.games-info,
+.about-info {
+    color: rgb(225, 225, 225);
+    text-align: left;
+    padding: 0px 0px 30px 0px;
+    width: 62%;
+    margin-left: 20%;
+}
+
+.container-icon {
+
+    font-size: 2rem;
+
+}
+
+.special-text {
+    color: var(--main-color);
+    font-weight: 900;
+    text-shadow:
+        0 0 5px var(--main-color),
+        0 0 1px var(--main-color),
+        0 0 1px var(--main-color),
+        0 0 1px var(--main-color),
+        0 0 1px var(--main-color),
+        0 0 1px var(--main-color),
+        0 0 1px var(--main-color);
+}
+
+.sub-heading-container {
+    transition: background-color 0.3s ease;
+}
+
+.sub-heading-container:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.focused {
+    outline: 2px solid rgb(255, 0, 0);
+    background: var(--container-color);
+    color: var(--main-color);
+}
+
+.sub-heading-container.focused {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.slideshow-container:hover {
+    outline: 5px solid var(--main-color);
+}
+
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}

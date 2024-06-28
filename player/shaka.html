@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHAKA Page</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.1.0/shaka-player.compiled.js"></script>
+    <script src="../utils/streamKeyMapping.js"></script>
+    <script src="../utils/videoPlayer.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a class="nav-link" href="/app/">HOME</a>
+            <a class="nav-link" href="/app/player/dash.html">DASH</a>
+            <a class="nav-link" href="/app/player/shaka.html">SHAKA</a>
+            <a class="nav-link" href="/app/player/hls.html">HLS</a>
+        </nav>
+    </header>
+
+    <div class="welcome-header">
+        <h1 class="heading">Welcome to the <span class="special-text">SHAKA</span> Page</h1>
+    </div>
+
+    <div class="container">
+
+        <div class="button-container">
+            <div class="btn-container">
+                <button class="btn" id="dashLiveButton" onclick="redirectToPlayer('shakaLive')">Play Live Stream SHAKA</button>
+            </div>
+            <div class="btn-container">
+                <button class="btn" id="dashVodButton" onclick="redirectToPlayer('shakaVod')">Play Stream SHAKA</button>
+            </div>
+        </div>
+
+
+
+        <div id="video-container">
+            <video id="video" muted></video>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
