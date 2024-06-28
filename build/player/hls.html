@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HLS Page</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="../style.css">
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <script src="/utils/streamKeyMapping.js"></script>
-    <script src="/utils/videoPlayer.js"></script>
+    <script src="../utils/streamKeyMapping.js"></script>
+    <script src="../utils/videoPlayer.js"></script>
 </head>
 
 <body>
     <header class="header">
         <nav class="navbar">
-            <a class="nav-link" href="/">HOME</a>
-            <a class="nav-link" href="/player/dash.html">DASH</a>
-            <a class="nav-link" href="/player/shaka.html">SHAKA</a>
-            <a class="nav-link" href="/player/hls.html">HLS</a>
+            <a class="nav-link" href="/app/">HOME</a>
+            <a class="nav-link" href="/app/player/dash.html">DASH</a>
+            <a class="nav-link" href="/app/player/shaka.html">SHAKA</a>
+            <a class="nav-link" href="/app/player/hls.html">HLS</a>
         </nav>
     </header>
 
@@ -26,18 +26,22 @@
     </div>
 
     <div class="container">
+
         <div class="button-container">
             <div class="btn-container">
-                <button class="btn" id="hlsLiveButton" onclick="redirectToPlayer('hlsLive')">Play Live Stream HLS</button>
+                <button class="btn" id="dashLiveButton" onclick="redirectToPlayer('hlsLive')">Play Live Stream HLS</button>
             </div>
             <div class="btn-container">
-                <button class="btn" id="hlsVodButton" onclick="redirectToPlayer('hlsVod')">Play Stream HLS</button>
+                <button class="btn" id="dashVodButton" onclick="redirectToPlayer('hlsVod')">Play Stream HLS</button>
             </div>
         </div>
+
+
 
         <div id="video-container">
             <video id="video" muted></video>
         </div>
+
     </div>
 
 </body>
