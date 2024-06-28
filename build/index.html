@@ -12,19 +12,16 @@
 
     <header class="header">
         <nav class="navbar">
-            <a id="nav-home" class="nav-link" href="/app/">HOME</a>
-            <a id="nav-dash" class="nav-link" href="/app/player/dash.html">DASH</a>
-            <a id="nav-shaka" class="nav-link" href="/app/player/shaka.html">SHAKA</a>
-            <a id="nav-hls" class="nav-link" href="/app/player/hls.html">HLS</a>
+            <a id="nav-home" class="nav-link" href="/">HOME</a>
+            <a id="nav-dash" class="nav-link" href="/player/dash.html">DASH</a>
+            <a id="nav-shaka" class="nav-link" href="/player/shaka.html">SHAKA</a>
+            <a id="nav-hls" class="nav-link" href="/player/hls.html">HLS</a>
         </nav>
     </header>
 
     <h1 class="heading-home">Welcome to <span class="special-text">RS</span> Streams!</h1>
 
-
-
     <div class="slideshow-container">
-
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
             <img src="./Images/hero1.png" style="width:100%">
@@ -42,9 +39,6 @@
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-
-
-
 
     <div class="sub-heading-container">
         <h2 class="sub-heading">About</h2>
@@ -94,7 +88,7 @@
 
     <div class="button-container">
         <div class="btn-container back-to-top-container">
-            <button class="btn" id="dashLiveButton" >Back To Top</button>
+            <button class="btn" id="dashLiveButton" onclick="window.scrollTo(0, 0)">Back To Top</button>
         </div>
     </div>
     <script src="./index.js"></script>
